@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Debt Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .stat-card {
+            margin-bottom: 20px;
+        }
+        .stat-card .card-body {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Debt Data</h1>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-header bg-primary text-white">Total Debts</div>
+                    <div class="card-body">
+                        {{ total_debts }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-header bg-success text-white">Total Amount Owed</div>
+                    <div class="card-body">
+                        {{ '%.2f' | format(total_amount_owed) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-header bg-warning text-white">Total Remaining Amount</div>
+                    <div class="card-body">
+                        {{ '%.2f' | format(total_remaining_amount) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card">
+                    <div class="card-header bg-info text-white">Total Amount Repaid</div>
+                    <div class="card-body">
+                        {{ '%.2f' | format(total_amount_repaid) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="/" class="btn btn-secondary">Back to Debt List</a>
+    </div>
+</body>
+</html>
